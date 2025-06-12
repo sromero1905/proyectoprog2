@@ -17,9 +17,7 @@ public:
      tamRegistro = sizeof (Empleado);
      };
 
-     int agregarRegistro (const Empleado& obj);
-
-    bool generarNuevo();
+     int agregarRegistro ();
 
     bool listarRegistros();
 
@@ -27,9 +25,12 @@ public:
 
     Empleado leerRegistro(int pos);
 
+    bool bajaEmpleado (int idEmpleado);
+
+    bool modificarEmpleado (int idEmpleado);
+
     int modificarRegistro(const Empleado& e, int pos);
 
-    int contarRegistros();
 };
 
 #endif // ARCHIVOEMPLEADO_H
