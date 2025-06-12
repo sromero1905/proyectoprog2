@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1749328655 source:c:\users\bauti\onedrive\escritorio\taller mecanico\main.cpp
+	<iostream>
+
+1749683193 source:c:\users\bauti\onedrive\escritorio\taller mecanico\empleado.cpp
+	<iostream>
+	"Empleado.h"
+	"ArchivoEmpleado.h"
+	"Persona.h"
+	<cstring>
+
+1749663692 c:\users\bauti\onedrive\escritorio\taller mecanico\empleado.h
+	"Persona.h"
+
+1749651259 c:\users\bauti\onedrive\escritorio\taller mecanico\persona.h
+
+1749664091 c:\users\bauti\onedrive\escritorio\taller mecanico\archivoempleado.h
+	"Empleado.h"
+	<cstdio>
+	<cstring>
+
+1749682381 source:c:\users\bauti\onedrive\escritorio\taller mecanico\persona.cpp
+	<cstring>
+	"Persona.h"
+
+1749683193 source:c:\users\ec46647557\desktop\taller mecanico - copia\empleado.cpp
+	<iostream>
+	"Empleado.h"
+	"ArchivoEmpleado.h"
+	"Persona.h"
+	<cstring>
+
+1749663692 c:\users\ec46647557\desktop\taller mecanico - copia\empleado.h
+	"Persona.h"
+
+1749651259 c:\users\ec46647557\desktop\taller mecanico - copia\persona.h
+
+1749664091 c:\users\ec46647557\desktop\taller mecanico - copia\archivoempleado.h
+	"Empleado.h"
+	<cstdio>
+	<cstring>
+
+1749328655 source:c:\users\ec46647557\desktop\taller mecanico - copia\main.cpp
+	<iostream>
+
+1749682381 source:c:\users\ec46647557\desktop\taller mecanico - copia\persona.cpp
+	<cstring>
+	"Persona.h"
+
