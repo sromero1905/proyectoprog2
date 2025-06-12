@@ -26,30 +26,31 @@ Factura::Factura(int nFact, int nRep, int imp, Fecha fecha, const char* pat, int
 }
 
 void Factura::generarFactura() {
-    cout << "GENERAR FACTURA:" << endl;
+    cout << "=== GENERAR NUEVA FACTURA ===" << endl;
 
-    cout << "INGRESAR NUMERO DE FACTURA: ";
+    cout << "Ingrese número de factura: ";
     cin >> NFactura;
 
-    cout << "INGRESAR NUMERO DE REPARACION: ";
+    cout << "Ingrese número de reparación: ";
     cin >> NReparacion;
 
-    cout << "INGRESAR IMPORTE: ";
+    cout << "Ingrese importe: ";
     cin >> Importe;
 
-    cout << "INGRESAR FECHA DE ENTREGA:" << endl;
-    FechaEntrega.AgregarFecha();
+    cout << "Ingrese fecha de entrega:" << endl;
+    FechaEntrega.cargarFecha();
 
-    cout << "INGRESAR PATENTE: ";
+    cout << "Ingrese patente: ";
     cin.ignore();
     cin.getline(NPatente, 20);
 
-    cout << "INGRESAR ID CLIENTE: ";
+    cout << "Ingrese ID del cliente: ";
     cin >> IDCliente;
 
-    ImporteTotal = Importe; // Se podría agregar IVA u otros cálculos
+    cout << "Ingrese importe total: ";
+    cin >> ImporteTotal;
 
-    cout << "FACTURA GENERADA EXITOSAMENTE." << endl;
+    cout << "Factura generada exitosamente!" << endl;
 }
 
 void Factura::mostrarFactura() {
@@ -58,7 +59,7 @@ void Factura::mostrarFactura() {
     cout << "NUMERO DE REPARACION: " << NReparacion << endl;
     cout << "IMPORTE: $" << Importe << endl;
     cout << "FECHA DE ENTREGA: ";
-    FechaEntrega.MostrarFecha();
+    FechaEntrega.mostrarFecha();
     cout << "PATENTE: " << NPatente << endl;
     cout << "ID CLIENTE: " << IDCliente << endl;
     cout << "IMPORTE TOTAL: $" << ImporteTotal << endl;

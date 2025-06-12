@@ -33,7 +33,7 @@
 1749663692 c:\users\ec46647557\desktop\taller mecanico - copia\empleado.h
 	"Persona.h"
 
-1749651259 c:\users\ec46647557\desktop\taller mecanico - copia\persona.h
+1749739196 c:\users\ec46647557\desktop\taller mecanico - copia\persona.h
 
 1749664091 c:\users\ec46647557\desktop\taller mecanico - copia\archivoempleado.h
 	"Empleado.h"
@@ -43,7 +43,30 @@
 1749328655 source:c:\users\ec46647557\desktop\taller mecanico - copia\main.cpp
 	<iostream>
 
-1749682381 source:c:\users\ec46647557\desktop\taller mecanico - copia\persona.cpp
+1749739439 source:c:\users\ec46647557\desktop\taller mecanico - copia\persona.cpp
 	<cstring>
+	<iostream>
 	"Persona.h"
+
+1749739218 source:c:\users\ec46647557\desktop\taller mecanico - copia\cliente.cpp
+	<iostream>
+	<cstring>
+	"Cliente.h"
+
+1749692410 c:\users\ec46647557\desktop\taller mecanico - copia\cliente.h
+	"Persona.h"
+
+1749739439 source:c:\users\ec46647557\desktop\taller mecanico - copia\factura.cpp
+	<iostream>
+	<cstring>
+	"Factura.h"
+
+1749692410 c:\users\ec46647557\desktop\taller mecanico - copia\factura.h
+	"Fecha.h"
+
+1749655203 c:\users\ec46647557\desktop\taller mecanico - copia\fecha.h
+
+1749739547 source:c:\users\ec46647557\desktop\taller mecanico - copia\fecha.cpp
+	"Fecha.h"
+	<iostream>
 

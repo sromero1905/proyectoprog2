@@ -63,38 +63,40 @@ void Cliente::MostrarCliente() {
     cout << "DIRECCION: " << Direccion << endl;
     cout << "ESTADO: " << (estado ? "Activo" : "Inactivo") << endl;
 }
-
 void Cliente::ActualizarCliente() {
     cout << "ACTUALIZAR DATOS DEL CLIENTE:" << endl;
 
+    char tempNombre[30], tempApellido[30];
+    int tempDNI, tempTelefono;
+
     cout << "NUEVO NOMBRE: ";
     cin.ignore();
-    cin.getline(Nombre, 30);
+    cin.getline(tempNombre, 30);
+    setNombre(tempNombre);
 
     cout << "NUEVO APELLIDO: ";
-    cin.getline(Apellido, 30);
+    cin.getline(tempApellido, 30);
+    setApellido(tempApellido);
 
     cout << "NUEVO DNI: ";
-    cin >> DNI;
+    cin >> tempDNI;
+    setDNI(tempDNI);
 
     cout << "NUEVO TELEFONO: ";
-    cin >> Telefono;
+    cin >> tempTelefono;
+    setTelefono(tempTelefono);
 
     cout << "NUEVO CUIT: ";
     cin >> Cuit;
-
     cout << "NUEVO EMAIL: ";
     cin.ignore();
     cin.getline(Email, 50);
-
     cout << "NUEVO TIPO CLIENTE (1-Particular, 2-Empresa): ";
     cin >> TipoCliente;
-
     cout << "NUEVA DIRECCION: ";
     cin.ignore();
     cin.getline(Direccion, 100);
 }
-
 void Cliente::EliminarCliente() {
     estado = false;
     cout << "CLIENTE ELIMINADO (BAJA LOGICA)." << endl;
