@@ -1,32 +1,28 @@
 #ifndef PERSONA_H
 #define PERSONA_H
-class  Persona {
-
+class Persona {
 public:
-
-    Persona ();
+    Persona();
+    Persona(const char* nom, const char* ape, int dni, int tel);
     void cargarDatosPersona();
     void mostrarDatosPersona() const;
 
-    //Getters
+    // Getters
     const char* getNombre();
     const char* getApellido();
     int getDNI();
     int getTelefono();
-                                                        // const en ints no es necesario
-      // Setters
+
+    // Setters
     void setNombre(const char* nom);
     void setApellido(const char* ape);
     void setDNI(int d);
     void setTelefono(int t);
 
 private:
-    char _Nombre [50];
-    char _Apellido [50];
+    char _Nombre[50];
+    char _Apellido[50];
     int _dni;
     int _Telefono;
-
-    };
-
-
-    #endif // PERSONA_H
+};
+#endif // PERSONA_H
