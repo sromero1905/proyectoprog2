@@ -5,7 +5,6 @@
 #include "ArchivoVehiculo.h"
 #include "Fecha.h"
 
-
 using namespace std;
 
 ArchivoVehiculo::ArchivoVehiculo(const char* nombre) {
