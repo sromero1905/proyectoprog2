@@ -32,13 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="ArchivoCliente.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="ArchivoCliente.cpp" />
 		<Unit filename="ArchivoCliente.h" />
 		<Unit filename="ArchivoEmpleado.h" />
 		<Unit filename="ArchivoPersona.h" />
-		<Unit filename="ArchivoReparaciones.h" />
+		<Unit filename="ArchivoReparacion.cpp" />
+		<Unit filename="ArchivoReparacion.h" />
 		<Unit filename="ArchivoVehiculo.h" />
 		<Unit filename="Cliente.cpp" />
 		<Unit filename="Cliente.h" />
@@ -50,7 +49,8 @@
 		<Unit filename="Fecha.h" />
 		<Unit filename="Persona.cpp" />
 		<Unit filename="Persona.h" />
-		<Unit filename="Reparaciones.h" />
+		<Unit filename="Reparacion.cpp" />
+		<Unit filename="Reparacion.h" />
 		<Unit filename="Vehiculo.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>

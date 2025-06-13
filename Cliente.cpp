@@ -4,20 +4,23 @@
 
 using namespace std;
 
+// Constructor por defecto
 Cliente::Cliente() : Persona() {
     IDCliente = 0;
-    Cuit = 0;
+    strcpy(CUIT, "");
     strcpy(Email, "");
-    TipoCliente = 0;
+    TipoCliente = 1; // Por defecto particular
     strcpy(Direccion, "");
     estado = true;
 }
 
-Cliente::Cliente(int id, const char* nom, const char* ape, int dni, int tel,
-                int cuit, const char* email, int tipo, const char* dir, bool est)
-                : Persona(nom, ape, dni, tel) {
-    IDCliente = id;
-    Cuit = cuit;
+// Constructor parametrizado
+Cliente::Cliente(const char* nom, const char* ape, int dni, int tel, int idCliente,
+                 const char* cuit, const char* email, int tipo, const char* dir, bool est)
+    : Persona(nom, ape, dni, tel) {
+    IDCliente = idCliente;
+    strncpy(CUIT, cuit, sizeof(CUIT) - 1);
+    CUIT[sizeof(CUIT) - 1] = '\0';
     strncpy(Email, email, sizeof(Email) - 1);
     Email[sizeof(Email) - 1] = '\0';
     TipoCliente = tipo;
@@ -27,77 +30,170 @@ Cliente::Cliente(int id, const char* nom, const char* ape, int dni, int tel,
 }
 
 void Cliente::cargarCliente() {
-    cout << "CARGAR DATOS DEL CLIENTE:" << endl;
+    cout << "=== CARGAR NUEVO CLIENTE ===" << endl;
 
-    cargarDatosPersona(); // Heredado de Persona
+    // Cargar datos de Persona
+    cargarDatosPersona();
 
-    cout << "INGRESAR ID CLIENTE: ";
+    cout << "Ingrese ID del cliente: ";
     cin >> IDCliente;
 
-    cout << "INGRESAR CUIT: ";
-    cin >> Cuit;
-
-    cout << "INGRESAR EMAIL: ";
+    cout << "Ingrese CUIT (opcional para particulares): ";
     cin.ignore();
+    cin.getline(CUIT, 15);
+
+    cout << "Ingrese email: ";
     cin.getline(Email, 50);
 
-    cout << "INGRESAR TIPO CLIENTE (1-Particular, 2-Empresa): ";
-    cin >> TipoCliente;
+    cout << "Tipo de cliente (1-Particular, 2-Empresa): ";
+    do {
+        cin >> TipoCliente;
+        if (TipoCliente < 1 || TipoCliente > 2) {
+            cout << "Tipo inválido. Ingrese 1 para Particular o 2 para Empresa: ";
+        }
+    } while (TipoCliente < 1 || TipoCliente > 2);
 
-    cout << "INGRESAR DIRECCION: ";
+    cout << "Ingrese dirección: ";
     cin.ignore();
     cin.getline(Direccion, 100);
 
-    estado = true;
+    estado = true; // Cliente activo por defecto
+
+    cout << "Cliente cargado exitosamente!" << endl;
 }
 
-void Cliente::MostrarCliente() {
-    cout << "DATOS DEL CLIENTE:" << endl;
+void Cliente::mostrarCliente() const {
+    cout << "=== DATOS DEL CLIENTE ===" << endl;
+    mostrarDatosPersona();
     cout << "ID CLIENTE: " << IDCliente << endl;
-
-    mostrarDatosPersona(); // Heredado de Persona
-
-    cout << "CUIT: " << Cuit << endl;
+    cout << "CUIT: " << (strlen(CUIT) > 0 ? CUIT : "No especificado") << endl;
     cout << "EMAIL: " << Email << endl;
-    cout << "TIPO CLIENTE: " << (TipoCliente == 1 ? "Particular" : "Empresa") << endl;
+    cout << "TIPO: " << getTipoClienteTexto() << endl;
     cout << "DIRECCION: " << Direccion << endl;
-    cout << "ESTADO: " << (estado ? "Activo" : "Inactivo") << endl;
+    cout << "ESTADO: " << (estado ? "ACTIVO" : "INACTIVO") << endl;
+    cout << "=========================" << endl;
 }
-void Cliente::ActualizarCliente() {
-    cout << "ACTUALIZAR DATOS DEL CLIENTE:" << endl;
 
-    char tempNombre[30], tempApellido[30];
-    int tempDNI, tempTelefono;
+void Cliente::actualizarCliente() {
+    int opcion;
+    cout << "=== ACTUALIZAR CLIENTE ===" << endl;
+    cout << "1. Actualizar datos personales" << endl;
+    cout << "2. Actualizar email" << endl;
+    cout << "3. Actualizar dirección" << endl;
+    cout << "4. Actualizar CUIT" << endl;
+    cout << "5. Cambiar tipo de cliente" << endl;
+    cout << "Seleccione una opción: ";
+    cin >> opcion;
 
-    cout << "NUEVO NOMBRE: ";
-    cin.ignore();
-    cin.getline(tempNombre, 30);
-    setNombre(tempNombre);
-
-    cout << "NUEVO APELLIDO: ";
-    cin.getline(tempApellido, 30);
-    setApellido(tempApellido);
-
-    cout << "NUEVO DNI: ";
-    cin >> tempDNI;
-    setDNI(tempDNI);
-
-    cout << "NUEVO TELEFONO: ";
-    cin >> tempTelefono;
-    setTelefono(tempTelefono);
-
-    cout << "NUEVO CUIT: ";
-    cin >> Cuit;
-    cout << "NUEVO EMAIL: ";
-    cin.ignore();
-    cin.getline(Email, 50);
-    cout << "NUEVO TIPO CLIENTE (1-Particular, 2-Empresa): ";
-    cin >> TipoCliente;
-    cout << "NUEVA DIRECCION: ";
-    cin.ignore();
-    cin.getline(Direccion, 100);
+    switch (opcion) {
+        case 1:
+            cout << "Actualizando datos personales..." << endl;
+            cargarDatosPersona();
+            break;
+        case 2:
+            cout << "Nuevo email: ";
+            cin.ignore();
+            cin.getline(Email, 50);
+            break;
+        case 3:
+            cout << "Nueva dirección: ";
+            cin.ignore();
+            cin.getline(Direccion, 100);
+            break;
+        case 4:
+            cout << "Nuevo CUIT: ";
+            cin.ignore();
+            cin.getline(CUIT, 15);
+            break;
+        case 5:
+            cout << "Nuevo tipo (1-Particular, 2-Empresa): ";
+            do {
+                cin >> TipoCliente;
+                if (TipoCliente < 1 || TipoCliente > 2) {
+                    cout << "Tipo inválido. Ingrese 1 o 2: ";
+                }
+            } while (TipoCliente < 1 || TipoCliente > 2);
+            break;
+        default:
+            cout << "Opción inválida." << endl;
+            return;
+    }
+    cout << "Cliente actualizado exitosamente!" << endl;
 }
-void Cliente::EliminarCliente() {
+
+void Cliente::eliminarCliente() {
     estado = false;
-    cout << "CLIENTE ELIMINADO (BAJA LOGICA)." << endl;
+    cout << "Cliente marcado como inactivo." << endl;
+}
+
+// Getters
+int Cliente::getIDCliente() const {
+    return IDCliente;
+}
+
+const char* Cliente::getCUIT() const {
+    return CUIT;
+}
+
+const char* Cliente::getEmail() const {
+    return Email;
+}
+
+int Cliente::getTipoCliente() const {
+    return TipoCliente;
+}
+
+const char* Cliente::getDireccion() const {
+    return Direccion;
+}
+
+bool Cliente::getEstado() const {
+    return estado;
+}
+
+// Setters
+void Cliente::setIDCliente(int id) {
+    IDCliente = id;
+}
+
+void Cliente::setCUIT(const char* cuit) {
+    strncpy(CUIT, cuit, sizeof(CUIT) - 1);
+    CUIT[sizeof(CUIT) - 1] = '\0';
+}
+
+void Cliente::setEmail(const char* email) {
+    strncpy(Email, email, sizeof(Email) - 1);
+    Email[sizeof(Email) - 1] = '\0';
+}
+
+void Cliente::setTipoCliente(int tipo) {
+    if (tipo >= 1 && tipo <= 2) {
+        TipoCliente = tipo;
+    }
+}
+
+void Cliente::setDireccion(const char* dir) {
+    strncpy(Direccion, dir, sizeof(Direccion) - 1);
+    Direccion[sizeof(Direccion) - 1] = '\0';
+}
+
+void Cliente::setEstado(bool est) {
+    estado = est;
+}
+
+// Métodos auxiliares
+const char* Cliente::getTipoClienteTexto() const {
+    switch (TipoCliente) {
+        case 1: return "Particular";
+        case 2: return "Empresa";
+        default: return "Desconocido";
+    }
+}
+
+bool Cliente::esEmpresa() const {
+    return TipoCliente == 2;
+}
+
+bool Cliente::esParticular() const {
+    return TipoCliente == 1;
 }
