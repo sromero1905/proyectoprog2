@@ -159,7 +159,7 @@
 	<iostream>
 	"Persona.h"
 
-1749842740 source:c:\users\personal\desktop\proyectoprog2\archivocliente.cpp
+1749845299 source:c:\users\personal\desktop\proyectoprog2\archivocliente.cpp
 	<iostream>
 	<cstring>
 	"ArchivoCliente.h"
@@ -184,7 +184,7 @@
 1749841613 c:\users\personal\desktop\proyectoprog2\reparacion.h
 	"Fecha.h"
 
-1749842740 source:c:\users\personal\desktop\proyectoprog2\main.cpp
+1749843326 source:c:\users\personal\desktop\proyectoprog2\main.cpp
 	<iostream>
 	<cstdlib>
 	"Cliente.h"

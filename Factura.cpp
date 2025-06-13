@@ -60,6 +60,7 @@ void Factura::mostrarFactura() {
     cout << "IMPORTE: $" << Importe << endl;
     cout << "FECHA DE ENTREGA: ";
     FechaEntrega.mostrarFecha();
+    cout<<endl;
     cout << "PATENTE: " << NPatente << endl;
     cout << "ID CLIENTE: " << IDCliente << endl;
     cout << "IMPORTE TOTAL: $" << ImporteTotal << endl;

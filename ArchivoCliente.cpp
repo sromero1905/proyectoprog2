@@ -24,7 +24,7 @@ void ArchivoCliente::AgregarCliente() {
     Cliente cliente;
     cliente.cargarCliente();
 
-    // Verificar si el ID ya existe
+    // Verifica si el ID ya existe
     if (ExisteCliente(cliente.getIDCliente())) {
         cout << "Error: Ya existe un cliente con ID " << cliente.getIDCliente() << endl;
         return;
