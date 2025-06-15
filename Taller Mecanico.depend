@@ -74,52 +74,59 @@
 
 1749739547 
 
-1749760589 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\empleado.cpp
+1750019359 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\empleado.cpp
 	<iostream>
 	"Empleado.h"
 	"ArchivoEmpleado.h"
 	"Persona.h"
 	<cstring>
 
-1749760923 c:\users\bauti\onedrive\escritorio\proyectoprog2\empleado.h
+1750014411 c:\users\bauti\onedrive\escritorio\proyectoprog2\empleado.h
 	"Persona.h"
 
-1749760181 c:\users\bauti\onedrive\escritorio\proyectoprog2\persona.h
+1750014411 c:\users\bauti\onedrive\escritorio\proyectoprog2\persona.h
 
-1749760923 c:\users\bauti\onedrive\escritorio\proyectoprog2\archivoempleado.h
+1750019158 c:\users\bauti\onedrive\escritorio\proyectoprog2\archivoempleado.h
 	"Empleado.h"
 	<cstdio>
 	<cstring>
 
-1749738578 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\main.cpp
+1750019158 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\main.cpp
 	<iostream>
+	<cstdlib>
+	"Cliente.h"
+	"ArchivoCliente.h"
+	"Reparacion.h"
+	"ArchivoReparacion.h"
+	"ArchivoEmpleado.h"
+	"Factura.h"
 
-1749760181 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\persona.cpp
+1750014411 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\persona.cpp
 	<cstring>
 	<iostream>
 	"Persona.h"
 
 1749738578 shed changes
 
-1749760181 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\cliente.cpp
+1750014411 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\cliente.cpp
 	<iostream>
 	<cstring>
 	"Cliente.h"
 
-1749738578 c:\users\bauti\onedrive\escritorio\proyectoprog2\cliente.h
+1750014411 c:\users\bauti\onedrive\escritorio\proyectoprog2\cliente.h
 	"Persona.h"
 
-1749760181 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\factura.cpp
+1750014411 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\factura.cpp
 	<iostream>
 	<cstring>
 	"Factura.h"
 
-1749738578 c:\users\bauti\onedrive\escritorio\proyectoprog2\factura.h
+1750014411 c:\users\bauti\onedrive\escritorio\proyectoprog2\factura.h
 	"Fecha.h"
 
-1749738578 c:\users\bauti\onedrive\escritorio\proyectoprog2\fecha.h
+1750014411 c:\users\bauti\onedrive\escritorio\proyectoprog2\fecha.h
 
-1749760181 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\fecha.cpp
+1750014411 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\fecha.cpp
 	"Fecha.h"
 	<iostream>
 
@@ -201,4 +208,30 @@
 	<iostream>
 	<cstring>
 	"ArchivoReparacion.h"
+
+1750014411 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\archivocliente.cpp
+	<iostream>
+	<cstring>
+	"ArchivoCliente.h"
+
+1750014411 c:\users\bauti\onedrive\escritorio\proyectoprog2\archivocliente.h
+	"Cliente.h"
+	<cstdio>
+
+1750014411 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\archivoreparacion.cpp
+	<iostream>
+	<cstring>
+	"ArchivoReparacion.h"
+
+1750014411 c:\users\bauti\onedrive\escritorio\proyectoprog2\archivoreparacion.h
+	"Reparacion.h"
+	<cstdio>
+
+1750014411 c:\users\bauti\onedrive\escritorio\proyectoprog2\reparacion.h
+	"Fecha.h"
+
+1750014411 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\reparacion.cpp
+	<iostream>
+	<cstring>
+	"Reparacion.h"
 

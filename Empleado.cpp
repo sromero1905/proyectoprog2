@@ -58,6 +58,9 @@ int ArchivoEmpleado::agregarRegistro() {
     Empleado obj;
     obj.cargarEmpleado();
 
+    int nuevoID = obtenerSiguienteId();
+    obj.setIDEmpleado(nuevoID);
+
     FILE* pEmpleado = fopen(nombreArchivo, "ab");
     if (!pEmpleado) return -1;
 
@@ -116,10 +119,6 @@ void Empleado::cargarEmpleado () {
       cout << "INGRESE TELEFONO: ";
     cin >> telefono;
     setTelefono(telefono);
-
-   cout << "INGRESE ID DE EMPLEADO: ";
-    cin >> id;
-    setIDEmpleado(id);
 
     cout << "INGRESE ESPECIALIDAD: ";
     cin >> especialidad;
@@ -228,3 +227,20 @@ bool ArchivoEmpleado::listarRegistros () {
 
   return true;
 }
+
+int ArchivoEmpleado::obtenerSiguienteId() {
+Empleado obj;
+FILE* p = fopen (nombreArchivo, "rb");
+if (!p) return 1;
+    int maxID = 0;
+    while (fread(&obj, tamRegistro, 1, p)) {
+        if (obj.getIDEmpleado() > maxID) {
+            maxID = obj.getIDEmpleado();
+        }
+    }
+    fclose(p);
+    return maxID + 1;
+}
+
+
+

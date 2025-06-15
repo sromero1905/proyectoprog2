@@ -4,12 +4,14 @@
 #include "ArchivoCliente.h"
 #include "Reparacion.h"
 #include "ArchivoReparacion.h"
+#include "ArchivoEmpleado.h"
 #include "Factura.h"
 
 using namespace std;
 
 // Prototipos de funciones
 void menuPrincipal();
+void menuEmpleado();
 void menuClientes();
 void menuReparaciones();
 void menuFacturas();
@@ -19,10 +21,12 @@ void pausar();
 void limpiarPantalla();
 
 // Instancias globales de archivos
+ArchivoEmpleado ArchivoEmpleado;
 ArchivoCliente archivoClientes;
 ArchivoReparacion archivoReparaciones;
 
 int main() {
+
     cout << "========================================" << endl;
     cout << "    SISTEMA DE GESTION DE TALLER       " << endl;
     cout << "          MECANICO - V1.0              " << endl;
@@ -30,8 +34,8 @@ int main() {
 
     menuPrincipal();
 
-    cout << "\nGracias por usar el Sistema de Gestión de Taller!" << endl;
-    return 0;
+    cout << "\nGracias por usar el Sistema de Gestion de Taller!" << endl;
+   return 0;
 }
 
 void menuPrincipal() {
@@ -40,12 +44,13 @@ void menuPrincipal() {
     do {
         limpiarPantalla();
         cout << "========== MENU PRINCIPAL ==========" << endl;
-        cout << "1. Gestión de Clientes" << endl;
-        cout << "2. Gestión de Reparaciones" << endl;
-        cout << "3. Gestión de Facturas" << endl;
+        cout << "1. Gestion de Clientes" << endl;
+        cout << "2. Gestion de Reparaciones" << endl;
+        cout << "3. Gestion de Facturas" << endl;
+        cout << "4. Gestion de Empleados" << endl;
         cout << "0. Salir" << endl;
         cout << "====================================" << endl;
-        cout << "Seleccione una opción: ";
+        cout << "Seleccione una opcion: ";
         cin >> opcion;
 
         switch (opcion) {
@@ -58,11 +63,14 @@ void menuPrincipal() {
             case 3:
                 menuFacturas();
                 break;
+            case 4:
+                menuEmpleado();
+            break;
             case 0:
                 cout << "Saliendo del sistema..." << endl;
                 break;
             default:
-                cout << "Opción inválida. Intente nuevamente." << endl;
+                cout << "Opcion invalida. Intente nuevamente." << endl;
                 pausar();
                 break;
         }
@@ -79,9 +87,9 @@ void menuClientes() {
         cout << "2. Mostrar Cliente" << endl;
         cout << "3. Modificar Cliente" << endl;
         cout << "4. Eliminar Cliente" << endl;
-        cout << "0. Volver al Menú Principal" << endl;
+        cout << "0. Volver al Menu Principal" << endl;
         cout << "=========================================" << endl;
-        cout << "Seleccione una opción: ";
+        cout << "Seleccione una opcion: ";
         cin >> opcion;
 
         switch (opcion) {
@@ -108,7 +116,7 @@ void menuClientes() {
             case 0:
                 break;
             default:
-                cout << "Opción inválida." << endl;
+                cout << "Opcion invalida." << endl;
                 pausar();
                 break;
         }
@@ -121,15 +129,15 @@ void menuReparaciones() {
     do {
         limpiarPantalla();
         cout << "======== GESTION DE REPARACIONES ========" << endl;
-        cout << "1. Agregar Reparación" << endl;
-        cout << "2. Mostrar Reparación" << endl;
+        cout << "1. Agregar Reparacion" << endl;
+        cout << "2. Mostrar Reparacion" << endl;
         cout << "3. Listar Todas las Reparaciones" << endl;
-        cout << "4. Buscar Reparación por ID" << endl;
-        cout << "5. Modificar Estado de Reparación" << endl;
+        cout << "4. Buscar Reparacion por ID" << endl;
+        cout << "5. Modificar Estado de Reparacion" << endl;
         cout << "6. Marcar como Pagado" << endl;
-        cout << "0. Volver al Menú Principal" << endl;
+        cout << "0. Volver al Menu Principal" << endl;
         cout << "=========================================" << endl;
-        cout << "Seleccione una opción: ";
+        cout << "Seleccione una opcion: ";
         cin >> opcion;
 
         switch (opcion) {
@@ -139,9 +147,9 @@ void menuReparaciones() {
                 reparacion.cargarReparacion();
 
                 if (archivoReparaciones.agregarRegistro(reparacion) != -1) {
-                    cout << "Reparación agregada exitosamente!" << endl;
+                    cout << "Reparacion agregada exitosamente!" << endl;
                 } else {
-                    cout << "Error al agregar la reparación." << endl;
+                    cout << "Error al agregar la reparacion." << endl;
                 }
                 pausar();
                 break;
@@ -149,7 +157,7 @@ void menuReparaciones() {
             case 2: {
                 cout << "\n=== MOSTRAR REPARACION ===" << endl;
                 int id;
-                cout << "Ingrese ID de la reparación: ";
+                cout << "Ingrese ID de la reparacion: ";
                 cin >> id;
 
                 int pos = archivoReparaciones.buscarReparacion(id);
@@ -157,7 +165,7 @@ void menuReparaciones() {
                     Reparacion rep = archivoReparaciones.leerRegistro(pos);
                     rep.mostrarReparacion();
                 } else {
-                    cout << "Reparación no encontrada." << endl;
+                    cout << "Reparacion no encontrada." << endl;
                 }
                 pausar();
                 break;
@@ -170,7 +178,7 @@ void menuReparaciones() {
             case 4: {
                 cout << "\n=== BUSCAR REPARACION ===" << endl;
                 int id;
-                cout << "Ingrese ID de la reparación: ";
+                cout << "Ingrese ID de la reparacion: ";
                 cin >> id;
 
                 int pos = archivoReparaciones.buscarReparacion(id);
@@ -178,7 +186,7 @@ void menuReparaciones() {
                     Reparacion rep = archivoReparaciones.leerRegistro(pos);
                     rep.mostrarReparacion();
                 } else {
-                    cout << "Reparación no encontrada." << endl;
+                    cout << "Reparacion no encontrada." << endl;
                 }
                 pausar();
                 break;
@@ -186,7 +194,7 @@ void menuReparaciones() {
             case 5: {
                 cout << "\n=== MODIFICAR ESTADO ===" << endl;
                 int id, nuevoEstado;
-                cout << "Ingrese ID de la reparación: ";
+                cout << "Ingrese ID de la reparacion: ";
                 cin >> id;
 
                 int pos = archivoReparaciones.buscarReparacion(id);
@@ -204,7 +212,7 @@ void menuReparaciones() {
                         cout << "Error al actualizar el estado." << endl;
                     }
                 } else {
-                    cout << "Reparación no encontrada." << endl;
+                    cout << "Reparaci0n no encontrada." << endl;
                 }
                 pausar();
                 break;
@@ -212,7 +220,7 @@ void menuReparaciones() {
             case 6: {
                 cout << "\n=== MARCAR COMO PAGADO ===" << endl;
                 int id;
-                cout << "Ingrese ID de la reparación: ";
+                cout << "Ingrese ID de la reparacion: ";
                 cin >> id;
 
                 int pos = archivoReparaciones.buscarReparacion(id);
@@ -227,13 +235,13 @@ void menuReparaciones() {
                     if (confirma == 's' || confirma == 'S') {
                         rep.setPagado(true);
                         if (archivoReparaciones.modificarRegistro(rep, pos) != -1) {
-                            cout << "Reparación marcada como pagada!" << endl;
+                            cout << "Reparacion marcada como pagada!" << endl;
                         } else {
                             cout << "Error al actualizar el pago." << endl;
                         }
                     }
                 } else {
-                    cout << "Reparación no encontrada." << endl;
+                    cout << "Reparacion no encontrada." << endl;
                 }
                 pausar();
                 break;
@@ -241,7 +249,7 @@ void menuReparaciones() {
             case 0:
                 break;
             default:
-                cout << "Opción inválida." << endl;
+                cout << "Opcion invalida." << endl;
                 pausar();
                 break;
         }
@@ -256,10 +264,10 @@ void menuFacturas() {
         cout << "========== GESTION DE FACTURAS ==========" << endl;
         cout << "1. Generar Factura" << endl;
         cout << "2. Mostrar Factura" << endl;
-        cout << "3. Generar Factura desde Reparación" << endl;
-        cout << "0. Volver al Menú Principal" << endl;
+        cout << "3. Generar Factura desde Reparacion" << endl;
+        cout << "0. Volver al Menu Principal" << endl;
         cout << "=========================================" << endl;
-        cout << "Seleccione una opción: ";
+        cout << "Seleccione una opcion: ";
         cin >> opcion;
 
         switch (opcion) {
@@ -280,7 +288,7 @@ void menuFacturas() {
             case 3: {
                 cout << "\n=== GENERAR FACTURA DESDE REPARACION ===" << endl;
                 int idReparacion;
-                cout << "Ingrese ID de la reparación: ";
+                cout << "Ingrese ID de la reparacion: ";
                 cin >> idReparacion;
 
                 int pos = archivoReparaciones.buscarReparacion(idReparacion);
@@ -301,7 +309,7 @@ void menuFacturas() {
                     cout << "\n=== FACTURA GENERADA ===" << endl;
                     factura.mostrarFactura();
                 } else {
-                    cout << "Reparación no encontrada." << endl;
+                    cout << "Reparacion no encontrada." << endl;
                 }
                 pausar();
                 break;
@@ -309,13 +317,78 @@ void menuFacturas() {
             case 0:
                 break;
             default:
-                cout << "Opción inválida." << endl;
+                cout << "Opcion invalida." << endl;
                 pausar();
                 break;
         }
     } while (opcion != 0);
 }
 
+
+void menuEmpleado () {
+    int opcion, id;
+
+    while (true) {
+        system("cls");
+
+        cout << "\n=== MENU EMPLEADO ===" << endl;
+        cout << "1. Agregar Empleado" << endl;
+        cout << "2. Eliminar Empleado" << endl;
+        cout << "3. Modificar Empleado" << endl;
+        cout << "4. Listar Empleados" << endl;
+        cout << "0. Salir" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        system("cls");
+
+        switch (opcion) {
+            case 1:
+                cout << "\n=== GENERAR EMPLEADO ===" << endl;
+                if (ArchivoEmpleado.agregarRegistro() == 1) {
+                    cout << "Empleado agregado correctamente (ID asignado automaticamente)." << endl;
+                } else {
+                    cout << "Error al agregar empleado." << endl;
+                }
+                cout << endl;
+                system("pause");
+                break;
+            case 2:
+                cout << "\n=== ELIMINAR EMPLEADO ===" << endl;
+                cout << "Ingrese ID de empleado a dar de baja: ";
+                cin >> id;
+                if (ArchivoEmpleado.bajaEmpleado(id)) {
+                    cout << "Empleado dado de baja correctamente." << endl;
+                } else {
+                    cout << "No se encontro el empleado o ya está dado de baja." << endl;
+                }
+                system("pause");
+                break;
+            case 3:
+                cout << "\n=== MODIFICAR EMPLEADO ===" << endl;
+                cout << "Ingrese ID de empleado a modificar: ";
+                cin >> id;
+                if (ArchivoEmpleado.modificarEmpleado(id)) {
+                    cout << "Empleado modificado correctamente." << endl;
+                } else {
+                    cout << "No se encontro el empleado o está dado de baja." << endl;
+                }
+                system("pause");
+                break;
+            case 4:
+                cout << "\n=== MOSTRAR EMPLEADOS ===" << endl;
+                ArchivoEmpleado.listarRegistros();
+                cout << endl;
+                system("pause");
+                break;
+            case 0:
+                return;
+            default:
+                cout << "Opcion invalida. Intente de nuevo." << endl;
+                system("pause");
+        }
+    }
+}
 
 
 void pausar() {
