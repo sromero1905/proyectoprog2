@@ -74,7 +74,7 @@
 
 1749739547 
 
-1750019359 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\empleado.cpp
+1750022528 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\empleado.cpp
 	<iostream>
 	"Empleado.h"
 	"ArchivoEmpleado.h"
@@ -91,7 +91,7 @@
 	<cstdio>
 	<cstring>
 
-1750019158 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\main.cpp
+1750020904 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\main.cpp
 	<iostream>
 	<cstdlib>
 	"Cliente.h"

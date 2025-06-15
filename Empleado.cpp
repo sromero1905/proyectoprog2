@@ -171,9 +171,7 @@ cout << "Apellido [" << getApellido () << "]: ";
 cin >> nuevoNombre;
 setApellido (nuevoNombre);
 
-cout << "DNI [" << getDNI() << "]: ";
-cin >> nuevoValor;
-setDNI (nuevoValor);
+ cout << "DNI [" << getDNI() << "] (NO MODIFICABLE)" << endl;
 
 cout << "Telefono [" << getTelefono() << "]: ";
 cin >> nuevoValor;
