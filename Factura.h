@@ -13,11 +13,16 @@ public:
     int IDCliente;
     int ImporteTotal;
 
+    // Constructores
     Factura();
     Factura(int nFact, int nRep, int imp, Fecha fecha, const char* pat, int idCli, int impTotal);
 
     void generarFactura();
     void mostrarFactura();
+    void mostrarTodasLasFacturas();
+
+private:
+    void guardarEnArchivo();
 };
 
 #endif // FACTURA_H

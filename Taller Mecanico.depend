@@ -130,7 +130,7 @@
 	"Fecha.h"
 	<iostream>
 
-1749841613 source:c:\users\personal\desktop\proyectoprog2\empleado.cpp
+1750103631 source:c:\users\personal\desktop\proyectoprog2\empleado.cpp
 	<iostream>
 	"Empleado.h"
 	"ArchivoEmpleado.h"
@@ -140,19 +140,20 @@
 1749841613 c:\users\personal\desktop\proyectoprog2\empleado.h
 	"Persona.h"
 
-1749841613 c:\users\personal\desktop\proyectoprog2\persona.h
+1750103631 c:\users\personal\desktop\proyectoprog2\persona.h
 
-1749841613 c:\users\personal\desktop\proyectoprog2\archivoempleado.h
+1750103631 c:\users\personal\desktop\proyectoprog2\archivoempleado.h
 	"Empleado.h"
 	<cstdio>
 	<cstring>
 
-1749841613 source:c:\users\personal\desktop\proyectoprog2\factura.cpp
+1750104416 source:c:\users\personal\desktop\proyectoprog2\factura.cpp
 	<iostream>
 	<cstring>
+	<cstdio>
 	"Factura.h"
 
-1749841613 c:\users\personal\desktop\proyectoprog2\factura.h
+1750104416 c:\users\personal\desktop\proyectoprog2\factura.h
 	"Fecha.h"
 
 1749841613 c:\users\personal\desktop\proyectoprog2\fecha.h
@@ -161,12 +162,12 @@
 	"Fecha.h"
 	<iostream>
 
-1749841613 source:c:\users\personal\desktop\proyectoprog2\persona.cpp
+1750103631 source:c:\users\personal\desktop\proyectoprog2\persona.cpp
 	<cstring>
 	<iostream>
 	"Persona.h"
 
-1749845299 source:c:\users\personal\desktop\proyectoprog2\archivocliente.cpp
+1750103631 source:c:\users\personal\desktop\proyectoprog2\archivocliente.cpp
 	<iostream>
 	<cstring>
 	"ArchivoCliente.h"
@@ -178,7 +179,7 @@
 1749842740 c:\users\personal\desktop\proyectoprog2\cliente.h
 	"Persona.h"
 
-1749842740 source:c:\users\personal\desktop\proyectoprog2\cliente.cpp
+1750103631 source:c:\users\personal\desktop\proyectoprog2\cliente.cpp
 	<iostream>
 	<cstring>
 	"Cliente.h"
@@ -191,13 +192,14 @@
 1749841613 c:\users\personal\desktop\proyectoprog2\reparacion.h
 	"Fecha.h"
 
-1749843326 source:c:\users\personal\desktop\proyectoprog2\main.cpp
+1750103631 source:c:\users\personal\desktop\proyectoprog2\main.cpp
 	<iostream>
 	<cstdlib>
 	"Cliente.h"
 	"ArchivoCliente.h"
 	"Reparacion.h"
 	"ArchivoReparacion.h"
+	"ArchivoEmpleado.h"
 	"Factura.h"
 
 1749842867 c:\users\personal\desktop\proyectoprog2\archivoreparacion.h
