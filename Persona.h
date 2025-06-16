@@ -18,6 +18,7 @@ public:
     void setApellido(const char* ape);
     void setDNI(int d);
     void setTelefono(int t);
+     void actualizarNombreApellido();
 
 private:
     char _Nombre[50];

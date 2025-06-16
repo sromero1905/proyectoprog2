@@ -84,7 +84,7 @@
 1750014411 c:\users\bauti\onedrive\escritorio\proyectoprog2\empleado.h
 	"Persona.h"
 
-1750014411 c:\users\bauti\onedrive\escritorio\proyectoprog2\persona.h
+1750086260 c:\users\bauti\onedrive\escritorio\proyectoprog2\persona.h
 
 1750019158 c:\users\bauti\onedrive\escritorio\proyectoprog2\archivoempleado.h
 	"Empleado.h"
@@ -101,14 +101,14 @@
 	"ArchivoEmpleado.h"
 	"Factura.h"
 
-1750014411 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\persona.cpp
+1750087264 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\persona.cpp
 	<cstring>
 	<iostream>
 	"Persona.h"
 
 1749738578 shed changes
 
-1750014411 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\cliente.cpp
+1750086177 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\cliente.cpp
 	<iostream>
 	<cstring>
 	"Cliente.h"
@@ -209,7 +209,7 @@
 	<cstring>
 	"ArchivoReparacion.h"
 
-1750014411 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\archivocliente.cpp
+1750085052 source:c:\users\bauti\onedrive\escritorio\proyectoprog2\archivocliente.cpp
 	<iostream>
 	<cstring>
 	"ArchivoCliente.h"

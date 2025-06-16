@@ -9,6 +9,25 @@ ArchivoCliente::ArchivoCliente(const char* nombre) {
     TamRegistro = sizeof(Cliente);
 }
 
+int ArchivoCliente::ObtenerProximoID() {
+    FILE* archivo = fopen(NombreArchivo, "rb");
+    if (archivo == nullptr) {
+        return 1; // Primer ID si no existe el archivo
+    }
+
+    Cliente cliente;
+    int maxID = 0;
+
+    while (fread(&cliente, TamRegistro, 1, archivo) == 1) {
+        if (cliente.getIDCliente() > maxID) {
+            maxID = cliente.getIDCliente();
+        }
+    }
+
+    fclose(archivo);
+    return maxID + 1;
+}
+
 bool ArchivoCliente::GenerarNuevo() {
     FILE* archivo = fopen(NombreArchivo, "wb");
     if (archivo == nullptr) {
@@ -24,11 +43,9 @@ void ArchivoCliente::AgregarCliente() {
     Cliente cliente;
     cliente.cargarCliente();
 
-    // Verifica si el ID ya existe
-    if (ExisteCliente(cliente.getIDCliente())) {
-        cout << "Error: Ya existe un cliente con ID " << cliente.getIDCliente() << endl;
-        return;
-    }
+    // Asignar ID autoincremental
+    int nuevoID = ObtenerProximoID();
+    cliente.setIDCliente(nuevoID);
 
     FILE* archivo = fopen(NombreArchivo, "ab");
     if (archivo == nullptr) {
@@ -40,7 +57,7 @@ void ArchivoCliente::AgregarCliente() {
     fclose(archivo);
 
     if (resultado == 1) {
-        cout << "Cliente agregado exitosamente!" << endl;
+        cout << "Cliente agregado exitosamente! ID asignado: " << cliente.getIDCliente() << endl;
     } else {
         cout << "Error: No se pudo guardar el cliente." << endl;
     }
@@ -190,21 +207,3 @@ bool ArchivoCliente::ExisteCliente(int id) {
     return cliente.getIDCliente() != 0;
 }
 
-int ArchivoCliente::ObtenerProximoID() {
-    FILE* archivo = fopen(NombreArchivo, "rb");
-    if (archivo == nullptr) {
-        return 1; // Primer ID si no existe el archivo
-    }
-
-    Cliente cliente;
-    int maxID = 0;
-
-    while (fread(&cliente, TamRegistro, 1, archivo) == 1) {
-        if (cliente.getIDCliente() > maxID) {
-            maxID = cliente.getIDCliente();
-        }
-    }
-
-    fclose(archivo);
-    return maxID + 1;
-}

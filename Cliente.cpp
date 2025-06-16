@@ -35,12 +35,7 @@ void Cliente::cargarCliente() {
     // Cargar datos de Persona
     cargarDatosPersona();
 
-    cout << "Ingrese ID del cliente: ";
-    cin >> IDCliente;
-
-    cout << "Ingrese CUIT (opcional para particulares): ";
     cin.ignore();
-    cin.getline(CUIT, 15);
 
     cout << "Ingrese email: ";
     cin.getline(Email, 50);
@@ -53,13 +48,17 @@ void Cliente::cargarCliente() {
         }
     } while (TipoCliente < 1 || TipoCliente > 2);
 
-    cout << "Ingrese dirección: ";
     cin.ignore();
+
+    cout << "Ingrese CUIT (opcional para particulares): ";
+    cin.getline(CUIT, 15);
+
+    cout << "Ingrese direccion: ";
     cin.getline(Direccion, 100);
 
     estado = true; // Cliente activo por defecto
 
-    cout << "Cliente cargado exitosamente!" << endl;
+
 }
 
 void Cliente::mostrarCliente() const {
@@ -79,7 +78,7 @@ void Cliente::actualizarCliente() {
     cout << "=== ACTUALIZAR CLIENTE ===" << endl;
     cout << "1. Actualizar datos personales" << endl;
     cout << "2. Actualizar email" << endl;
-    cout << "3. Actualizar dirección" << endl;
+    cout << "3. Actualizar direccion" << endl;
     cout << "4. Actualizar CUIT" << endl;
     cout << "5. Cambiar tipo de cliente" << endl;
     cout << "Seleccione una opción: ";
@@ -88,7 +87,8 @@ void Cliente::actualizarCliente() {
     switch (opcion) {
         case 1:
             cout << "Actualizando datos personales..." << endl;
-            cargarDatosPersona();
+            actualizarNombreApellido ();
+            cout << "El DNI no puede ser modificado." << endl;
             break;
         case 2:
             cout << "Nuevo email: ";
@@ -96,7 +96,7 @@ void Cliente::actualizarCliente() {
             cin.getline(Email, 50);
             break;
         case 3:
-            cout << "Nueva dirección: ";
+            cout << "Nueva direccion: ";
             cin.ignore();
             cin.getline(Direccion, 100);
             break;
@@ -118,7 +118,7 @@ void Cliente::actualizarCliente() {
             cout << "Opción inválida." << endl;
             return;
     }
-    cout << "Cliente actualizado exitosamente!" << endl;
+
 }
 
 void Cliente::eliminarCliente() {

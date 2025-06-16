@@ -39,6 +39,24 @@ void Persona::mostrarDatosPersona() const {
     cout << "TELEFONO: " << _Telefono << endl;
 }
 
+void Persona::actualizarNombreApellido() {
+    char nuevoNombre[50];
+    int nuevoTelefono;
+    cout << "Nuevo nombre [" << _Nombre << "]: ";
+    cin.ignore();
+    cin.getline(nuevoNombre, 50);
+    setNombre(nuevoNombre);
+
+    cout << "Nuevo apellido [" << _Apellido << "]: ";
+    cin.getline(nuevoNombre, 50);
+    setApellido(nuevoNombre);
+
+   cout << "Nuevo Telefono [" << _Telefono<< "]: ";
+    cin>> nuevoTelefono;
+    setTelefono(nuevoTelefono);
+}
+
+
 //setters
 void Persona::setNombre(const char* nombre) {
     strcpy(_Nombre, nombre);
