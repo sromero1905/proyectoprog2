@@ -6,7 +6,7 @@
 #include "ArchivoReparacion.h"
 #include "ArchivoEmpleado.h"
 #include "Factura.h"
-
+#include "Informes.h"
 using namespace std;
 
 // Prototipos de funciones
@@ -48,6 +48,7 @@ void menuPrincipal() {
         cout << "2. Gestion de Reparaciones" << endl;
         cout << "3. Gestion de Facturas" << endl;
         cout << "4. Gestion de Empleados" << endl;
+        cout << "5. Gestion de Informes"<<endl;
         cout << "0. Salir" << endl;
         cout << "====================================" << endl;
         cout << "Seleccione una opcion: ";
@@ -65,6 +66,11 @@ void menuPrincipal() {
                 break;
             case 4:
                 menuEmpleado();
+            case 5: {
+                Informes informes;
+                informes.mostrarMenuInformes();
+                break;
+            }
             break;
             case 0:
                 cout << "Saliendo del sistema..." << endl;

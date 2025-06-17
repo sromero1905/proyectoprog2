@@ -192,7 +192,7 @@
 1749841613 c:\users\personal\desktop\proyectoprog2\reparacion.h
 	"Fecha.h"
 
-1750103631 source:c:\users\personal\desktop\proyectoprog2\main.cpp
+1750195009 source:c:\users\personal\desktop\proyectoprog2\main.cpp
 	<iostream>
 	<cstdlib>
 	"Cliente.h"
@@ -201,6 +201,7 @@
 	"ArchivoReparacion.h"
 	"ArchivoEmpleado.h"
 	"Factura.h"
+	"Informes.h"
 
 1749842867 c:\users\personal\desktop\proyectoprog2\archivoreparacion.h
 	"Reparacion.h"
@@ -236,4 +237,16 @@
 	<iostream>
 	<cstring>
 	"Reparacion.h"
+
+1750194917 source:c:\users\personal\desktop\proyectoprog2\informes.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+	"Informes.h"
+
+1750194917 c:\users\personal\desktop\proyectoprog2\informes.h
+	"ArchivoReparacion.h"
+	"ArchivoCliente.h"
+	"Factura.h"
+	<cstdio>
 

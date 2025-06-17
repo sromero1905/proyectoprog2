@@ -146,19 +146,17 @@ int ArchivoReparacion::modificarRegistro(const Reparacion r, int pos) {
 int ArchivoReparacion::contarRegistros() {
     FILE* archivo = fopen(nombreArchivo, "rb");
     if (archivo == nullptr) {
-        return 0; // Si no existe el archivo, hay 0 registros
+        return 0;
     }
 
-    // Ir al final del archivo
     fseek(archivo, 0, SEEK_END);
     long tamanioArchivo = ftell(archivo);
     fclose(archivo);
 
-    // Calcular cantidad de registros
     return tamanioArchivo / tamRegistro;
 }
 
-// Métodos adicionales útiles para el sistema
+
 
 bool ArchivoReparacion::existeReparacion(int id) {
     return buscarReparacion(id) != -1;
@@ -167,7 +165,7 @@ bool ArchivoReparacion::existeReparacion(int id) {
 int ArchivoReparacion::obtenerProximoID() {
     FILE* archivo = fopen(nombreArchivo, "rb");
     if (archivo == nullptr) {
-        return 1; // Primer ID si no existe el archivo
+        return 1;
     }
 
     Reparacion reparacion;
