@@ -38,6 +38,7 @@
 		<Unit filename="ArchivoPersona.h" />
 		<Unit filename="ArchivoReparacion.cpp" />
 		<Unit filename="ArchivoReparacion.h" />
+		<Unit filename="ArchivoVehiculo.cpp" />
 		<Unit filename="ArchivoVehiculo.h" />
 		<Unit filename="Cliente.cpp" />
 		<Unit filename="Cliente.h" />
@@ -53,6 +54,7 @@
 		<Unit filename="Persona.h" />
 		<Unit filename="Reparacion.cpp" />
 		<Unit filename="Reparacion.h" />
+		<Unit filename="Vehiculo.cpp" />
 		<Unit filename="Vehiculo.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>

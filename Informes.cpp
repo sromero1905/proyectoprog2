@@ -18,7 +18,7 @@ void Informes::recaudacionMensual() {
     mostrarEncabezado("RECAUDACION MENSUAL");
 
     int anio;
-    cout << "Año: ";
+    cout << "Anio: ";
     cin >> anio;
 
     const char* meses[] = {"Ene", "Feb", "Mar", "Abr", "May", "Jun",
@@ -39,7 +39,7 @@ void Informes::recaudacionAnual() {
     mostrarEncabezado("RECAUDACION ANUAL");
 
     int anio;
-    cout << "Año: ";
+    cout << "Anio: ";
     cin >> anio;
 
     float total = calcularRecaudacionAnio(anio);
@@ -111,6 +111,7 @@ void Informes::reparacionesPorVehiculo() {
     int contador = 0;
     float total = 0;
 
+//busca reparacion y valor de servicio
     while (fread(&rep, sizeof(Reparacion), 1, archivo)) {
         if (strcmp(rep.getPatente(), patente) == 0) {
             contador++;
@@ -199,7 +200,7 @@ void Informes::vehiculoMasReparado() {
         }
     }
 
-    cout << "Vehículo más reparado:" << endl;
+    cout << "Vehiculo mas reparado:" << endl;
     cout << "Patente: " << patentes[indiceMax] << endl;
     cout << "Reparaciones: " << maxRep << endl;
 
@@ -259,14 +260,14 @@ void Informes::mostrarMenuInformes() {
     int opcion;
     do {
         cout << "\n===== INFORMES =====" << endl;
-        cout << "1. Recaudación Mensual" << endl;
-        cout << "2. Recaudación Anual" << endl;
-        cout << "3. Recaudación por Cliente" << endl;
+        cout << "1. Recaudacion Mensual" << endl;
+        cout << "2. Recaudacion Anual" << endl;
+        cout << "3. Recaudacion por Cliente" << endl;
         cout << "4. Reparaciones por Vehículo" << endl;
         cout << "5. Reparaciones por Empleado" << endl;
-        cout << "6. Vehículo Más Reparado" << endl;
+        cout << "6. Vehiculo Mas Reparado" << endl;
         cout << "0. Volver" << endl;
-        cout << "Opción: ";
+        cout << "Opcion: ";
         cin >> opcion;
 
         switch (opcion) {
@@ -277,7 +278,7 @@ void Informes::mostrarMenuInformes() {
             case 5: reparacionesPorEmpleado(); break;
             case 6: vehiculoMasReparado(); break;
             case 0: break;
-            default: cout << "Opción inválida." << endl;
+            default: cout << "Opcion invalida." << endl;
         }
 
         if (opcion != 0) {

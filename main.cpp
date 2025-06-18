@@ -7,6 +7,7 @@
 #include "ArchivoEmpleado.h"
 #include "Factura.h"
 #include "Informes.h"
+#include "ArchivoVehiculo.h"
 using namespace std;
 
 // Prototipos de funciones
@@ -19,8 +20,10 @@ void menuListados();
 void menuInformes();
 void pausar();
 void limpiarPantalla();
+ void menuVehiculo ();
 
 // Instancias globales de archivos
+ArchivoVehiculo ArchivoVehiculo;
 ArchivoEmpleado ArchivoEmpleado;
 ArchivoCliente archivoClientes;
 ArchivoReparacion archivoReparaciones;
@@ -49,6 +52,7 @@ void menuPrincipal() {
         cout << "3. Gestion de Facturas" << endl;
         cout << "4. Gestion de Empleados" << endl;
         cout << "5. Gestion de Informes"<<endl;
+        cout << "6. Gestion de Vehiculos"<< endl;
         cout << "0. Salir" << endl;
         cout << "====================================" << endl;
         cout << "Seleccione una opcion: ";
@@ -72,6 +76,9 @@ void menuPrincipal() {
                 break;
             }
             break;
+           case 6: {
+            menuVehiculo();
+            }
             case 0:
                 cout << "Saliendo del sistema..." << endl;
                 break;
@@ -420,6 +427,79 @@ void menuEmpleado () {
         }
     }
 }
+
+void menuVehiculo () {
+int opcion;
+char patente [10];
+while (true) {
+            system("cls");
+ cout << "\n=== MENU VEHICULOS===" << endl;
+        cout << "1. Agregar Vehiculos" << endl;
+        cout << "2. Eliminar Vehiculo" << endl;
+        cout << "3. Modificar Vehiculo" << endl;
+        cout << "4. Listar Vehiculos" << endl;
+        cout << "0. Salir" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+        switch (opcion) {
+            case 1:
+                cout << "\n=== CARGAR VEHICULO ===" << endl;
+                  if (ArchivoVehiculo.AgregarRegistro() == 1) {
+                    cout << "Vehiculo agregado correctamente. " << endl;
+                } else {
+                    cout << "Error al agregar Vehiculo." << endl;
+                }
+                cout << endl;
+                system("pause");
+                break;
+                  case 2:
+                cout << "\n=== ELIMINAR VEHICULO ===" << endl;
+                cout << "Ingrese la patente del vehiculo a dar de baja: ";
+                cin >> patente;
+                if (ArchivoVehiculo.bajaVehiculo(patente)) {
+                    cout << "Vehiculo dado de baja correctamente." << endl;
+                } else {
+                    cout << "No se encontro el vehiculo o ya está dado de baja." << endl;
+                }
+                system("pause");
+                break;
+                case 3: {
+    cout << "\n=== MODIFICAR VEHICULO ===" << endl;
+    cout << "Ingrese la Patente del vehiculo a modificar: ";
+    cin >> patente;
+    int pos = ArchivoVehiculo.BuscarVehiculo(patente);
+    if (pos == -1) {
+        cout << "No se encontro el vehiculo o está dado de baja." << endl;
+    } else {
+        Vehiculo v = ArchivoVehiculo.LeerRegistro(pos);
+        v.mostrarVehiculo();
+        cout << "\nIngrese los nuevos datos (deje en blanco para no modificar):" << endl;
+        v.ModificarVehiculo();
+        if (ArchivoVehiculo.ModificarRegistro(v, pos) == 1) {
+            cout << "Vehiculo modificado correctamente." << endl;
+        } else {
+            cout << "Error al modificar el vehiculo." << endl;
+        }
+    }
+    system("pause");
+    break;
+                }
+                case 4:
+                cout << "\n=== MOSTRAR VEHICULOS ===" << endl;
+                ArchivoVehiculo.listarRegistros ();
+                cout << endl;
+                system("pause");
+                break;
+                 case 0:
+                return;
+            default:
+                cout << "Opcion invalida. Intente de nuevo." << endl;
+                system("pause");
+}
+
+}
+}
+
 
 
 void pausar() {

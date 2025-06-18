@@ -102,7 +102,7 @@ Empleado ArchivoEmpleado::leerRegistro (int pos) {
 
 void Empleado::cargarEmpleado () {
   char nombre[50], apellido[50], especialidad[50];
-    int dni, telefono, id;
+    int dni, telefono;
 
     cout << "INGRESE EL NOMBRE: ";
     cin >> nombre;
