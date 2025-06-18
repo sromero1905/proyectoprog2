@@ -22,7 +22,7 @@ void Fecha::cargarFecha() {
     cin >> dia;
     cout << "INGRESAR MES: ";
     cin >> mes;
-    cout << "INGRESAR AÑO: ";
+    cout << "INGRESAR ANIO: ";
     cin >> anio;
 }
 

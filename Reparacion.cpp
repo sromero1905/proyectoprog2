@@ -21,9 +21,6 @@ Reparacion::Reparacion() {
 void Reparacion::cargarReparacion() {
     cout << "=== CARGAR NUEVA REPARACION ===" << endl;
 
-    cout << "Ingrese ID de reparación: ";
-    cin >> IDReparacion;
-
     cout << "Ingrese patente del vehículo: ";
     cin.ignore();
     cin.getline(patente, 10);
@@ -40,7 +37,7 @@ void Reparacion::cargarReparacion() {
     cout << "Ingrese fecha de entrega estimada:" << endl;
     fechaEntrega.cargarFecha();
 
-    cout << "Ingrese descripción del trabajo: ";
+    cout << "Ingrese descripcion del trabajo: ";
     cin.ignore();
     cin.getline(descripcionTrabajo, 200);
 
@@ -54,16 +51,16 @@ void Reparacion::cargarReparacion() {
     do {
         cin >> estado;
         if (estado < 1 || estado > 3) {
-            cout << "Estado inválido. Ingrese 1, 2 o 3: ";
+            cout << "Estado invalido. Ingrese 1, 2 o 3: ";
         }
     } while (estado < 1 || estado > 3);
 
     char respuesta;
-    cout << "¿Está pagado? (s/n): ";
+    cout << "¿Esta pagado? (s/n): ";
     cin >> respuesta;
     pagado = (respuesta == 's' || respuesta == 'S');
 
-    cout << "Reparación cargada exitosamente!" << endl;
+    cout << "Reparacion cargada exitosamente!" << endl;
 }
 
 void Reparacion::mostrarReparacion() const {

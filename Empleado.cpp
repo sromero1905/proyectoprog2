@@ -54,50 +54,15 @@ bool Empleado::estaActivo() {
 }
 
 
-int ArchivoEmpleado::agregarRegistro() {
-    Empleado obj;
-    obj.cargarEmpleado();
-
-    int nuevoID = obtenerSiguienteId();
-    obj.setIDEmpleado(nuevoID);
-
-    FILE* pEmpleado = fopen(nombreArchivo, "ab");
-    if (!pEmpleado) return -1;
-
-    int escribio = fwrite(&obj, tamRegistro, 1, pEmpleado);
-    fclose(pEmpleado);
-    return escribio;
-}
-
-int ArchivoEmpleado::buscarEmpleado(int idEmpleado) {
-    Empleado obj;
-    FILE* p = fopen(nombreArchivo, "rb");
-    if (!p) return -1;
-
-    int pos = 0;
-    while (fread(&obj, tamRegistro, 1, p)) {
-        if (obj.getIDEmpleado() == idEmpleado && obj.estaActivo()) {
-            fclose(p);
-            return pos;
-        }
-        pos++;
-    }
-
-    fclose (p);
-    return -1;
-}
-
-Empleado ArchivoEmpleado::leerRegistro (int pos) {
-  Empleado obj;
-    FILE* p = fopen(nombreArchivo, "rb");
-    if (!p) return obj;
-
-    fseek(p, pos * tamRegistro, SEEK_SET);
-    fread(&obj, tamRegistro, 1, p);
-    fclose(p);
-
-    return obj;
-
+void Empleado::mostrarEmpleado () {
+    cout << endl;
+    cout << "ID Empleado: " << getIDEmpleado() << endl;
+    cout << "Nombre: " << getNombre() << endl;
+    cout << "Apellido: " << getApellido() << endl;
+    cout << "DNI: " << getDNI() << endl;
+    cout << "Telefono: " << getTelefono() << endl;
+    cout << "Especialidad: " << getEspecialidad() << endl;
+    cout << "Estado: " << (estaActivo() ? "Activo" : "Baja") << endl;
 }
 
 void Empleado::cargarEmpleado () {
@@ -127,38 +92,6 @@ void Empleado::cargarEmpleado () {
     setActivo (true);
 }
 
-
-bool ArchivoEmpleado::bajaEmpleado (int IdEmpleado) {
-int pos = buscarEmpleado (IdEmpleado);
-if (pos < 0) {
-    return false;
-}
-Empleado obj = leerRegistro (pos);
-
-obj.setActivo (false);
-
-FILE* p =fopen (nombreArchivo, "rb+");
-if (!p) return false;
-
-fseek (p, pos * tamRegistro, SEEK_SET);
-int escribio = fwrite (&obj, tamRegistro, 1, p);
-fclose (p);
-
-return (escribio == 1);
-}
-
-
-void Empleado::mostrarEmpleado () {
-    cout << endl;
-    cout << "ID Empleado: " << getIDEmpleado() << endl;
-    cout << "Nombre: " << getNombre() << endl;
-    cout << "Apellido: " << getApellido() << endl;
-    cout << "DNI: " << getDNI() << endl;
-    cout << "Telefono: " << getTelefono() << endl;
-    cout << "Especialidad: " << getEspecialidad() << endl;
-    cout << "Estado: " << (estaActivo() ? "Activo" : "Baja") << endl;
-}
-
 void Empleado::actualizarEmpleado ( ){
 char nuevoNombre [50];
 int nuevoValor;
@@ -182,63 +115,3 @@ cin >> nuevoNombre;
 setEspecialidad (nuevoNombre);
 
 }
-
-
-bool ArchivoEmpleado::modificarEmpleado(int idEmpleado) {
-    int pos = buscarEmpleado(idEmpleado);
-    if (pos < 0) return false;
-
-
-    Empleado obj = leerRegistro(pos);
-    cout << "Datos actuales del empleado: ";
-    obj.mostrarEmpleado();
-
-    cout << " --- Actualizar campos --- ";
-    obj.actualizarEmpleado();
-
-
-    FILE* p = fopen(nombreArchivo, "rb+");
-    if (!p) return false;
-    fseek(p, pos * tamRegistro, SEEK_SET);
-    int wrote = fwrite(&obj, tamRegistro, 1, p);
-    fclose(p);
-
-    return (wrote == 1);
-}
-
-bool ArchivoEmpleado::listarRegistros () {
-    Empleado obj;
-    FILE* p = fopen(nombreArchivo, "rb");
-    if (!p) {
-        cout << "No se pudo abrir el archivo de empleados. ";
-        return false;
-    }
-
-    while (fread(&obj, tamRegistro, 1, p)) {
-        if (obj.estaActivo()) {
-            obj.mostrarEmpleado();
-            cout << "------------------------";
-        }
-    }
-
-    fclose(p);
-
-  return true;
-}
-
-int ArchivoEmpleado::obtenerSiguienteId() {
-Empleado obj;
-FILE* p = fopen (nombreArchivo, "rb");
-if (!p) return 1;
-    int maxID = 0;
-    while (fread(&obj, tamRegistro, 1, p)) {
-        if (obj.getIDEmpleado() > maxID) {
-            maxID = obj.getIDEmpleado();
-        }
-    }
-    fclose(p);
-    return maxID + 1;
-}
-
-
-

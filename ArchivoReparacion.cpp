@@ -31,10 +31,10 @@ int ArchivoReparacion::agregarRegistro(const Reparacion r) {
     fclose(archivo);
 
     if (resultado == 1) {
-        cout << "Reparación agregada exitosamente!" << endl;
+        cout << "Reparacion agregada exitosamente!" << endl;
         return 0; // Éxito
     } else {
-        cout << "Error: No se pudo guardar la reparación." << endl;
+        cout << "Error: No se pudo guardar la reparacion." << endl;
         return -1; // Error
     }
 }
@@ -53,7 +53,7 @@ bool ArchivoReparacion::listarRegistros() {
     cout << "===============================" << endl;
 
     while (fread(&reparacion, tamRegistro, 1, archivo) == 1) {
-        cout << "\n--- Reparación #" << (contador + 1) << " ---" << endl;
+        cout << "\n--- Reparacion #" << (contador + 1) << " ---" << endl;
         reparacion.mostrarReparacion();
         contador++;
     }
@@ -92,7 +92,7 @@ int ArchivoReparacion::buscarReparacion(int id) {
 }
 
 Reparacion ArchivoReparacion::leerRegistro(int pos) {
-    Reparacion reparacion; // Reparación vacía por defecto
+    Reparacion reparacion; // Reparación vacia por defecto
 
     FILE* archivo = fopen(nombreArchivo, "rb");
     if (archivo == nullptr) {
@@ -102,7 +102,7 @@ Reparacion ArchivoReparacion::leerRegistro(int pos) {
 
     // Mover el puntero a la posición especificada
     if (fseek(archivo, pos * tamRegistro, SEEK_SET) != 0) {
-        cout << "Error: No se pudo acceder a la posición especificada." << endl;
+        cout << "Error: No se pudo acceder a la posicion especificada." << endl;
         fclose(archivo);
         return reparacion;
     }
@@ -119,13 +119,13 @@ Reparacion ArchivoReparacion::leerRegistro(int pos) {
 int ArchivoReparacion::modificarRegistro(const Reparacion r, int pos) {
     FILE* archivo = fopen(nombreArchivo, "r+b");
     if (archivo == nullptr) {
-        cout << "Error: No se pudo abrir el archivo para modificación." << endl;
+        cout << "Error: No se pudo abrir el archivo para modificacion." << endl;
         return -1;
     }
 
     // Mover el puntero a la posición especificada
     if (fseek(archivo, pos * tamRegistro, SEEK_SET) != 0) {
-        cout << "Error: No se pudo acceder a la posición especificada." << endl;
+        cout << "Error: No se pudo acceder a la posicion especificada." << endl;
         fclose(archivo);
         return -1;
     }
@@ -135,10 +135,10 @@ int ArchivoReparacion::modificarRegistro(const Reparacion r, int pos) {
     fclose(archivo);
 
     if (resultado == 1) {
-        cout << "Reparación modificada exitosamente!" << endl;
+        cout << "Reparacion modificada exitosamente!" << endl;
         return 0; // Éxito
     } else {
-        cout << "Error: No se pudo modificar la reparación." << endl;
+        cout << "Error: No se pudo modificar la reparacion." << endl;
         return -1; // Error
     }
 }
@@ -196,7 +196,7 @@ bool ArchivoReparacion::listarReparacionesPorCliente(int idCliente) {
 
     while (fread(&reparacion, tamRegistro, 1, archivo) == 1) {
         if (reparacion.getIDCliente() == idCliente) {
-            cout << "\n--- Reparación #" << (contador + 1) << " ---" << endl;
+            cout << "\n--- Reparacion #" << (contador + 1) << " ---" << endl;
             reparacion.mostrarReparacion();
             contador++;
         }
@@ -236,7 +236,7 @@ bool ArchivoReparacion::listarReparacionesPorEstado(int estado) {
 
     while (fread(&reparacion, tamRegistro, 1, archivo) == 1) {
         if (reparacion.getEstado() == estado) {
-            cout << "\n--- Reparación #" << (contador + 1) << " ---" << endl;
+            cout << "\n--- Reparacion #" << (contador + 1) << " ---" << endl;
             reparacion.mostrarReparacion();
             contador++;
         }
@@ -269,7 +269,7 @@ bool ArchivoReparacion::listarReparacionesPendientesPago() {
 
     while (fread(&reparacion, tamRegistro, 1, archivo) == 1) {
         if (!reparacion.estaPagado()) {
-            cout << "\n--- Reparación #" << (contador + 1) << " ---" << endl;
+            cout << "\n--- Reparacion #" << (contador + 1) << " ---" << endl;
             reparacion.mostrarReparacion();
             totalPendiente += reparacion.getImporte();
             contador++;

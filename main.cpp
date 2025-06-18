@@ -34,7 +34,7 @@ int main() {
     cout << "    SISTEMA DE GESTION DE TALLER       " << endl;
     cout << "          MECANICO - V1.0              " << endl;
     cout << "========================================" << endl;
-
+system ("pause");
     menuPrincipal();
 
     cout << "\nGracias por usar el Sistema de Gestion de Taller!" << endl;
@@ -70,15 +70,16 @@ void menuPrincipal() {
                 break;
             case 4:
                 menuEmpleado();
+                break;
             case 5: {
                 Informes informes;
                 informes.mostrarMenuInformes();
                 break;
             }
             break;
-           case 6: {
+           case 6:
             menuVehiculo();
-            }
+            break;
             case 0:
                 cout << "Saliendo del sistema..." << endl;
                 break;
@@ -155,9 +156,12 @@ void menuReparaciones() {
 
         switch (opcion) {
             case 1: {
-                cout << "\n=== AGREGAR REPARACION ===" << endl;
+               cout << "\n=== AGREGAR REPARACION ===" << endl;
                 Reparacion reparacion;
                 reparacion.cargarReparacion();
+
+                int nuevoID = archivoReparaciones.obtenerProximoID();
+                reparacion.setIDReparacion(nuevoID);
 
                 if (archivoReparaciones.agregarRegistro(reparacion) != -1) {
                     cout << "Reparacion agregada exitosamente!" << endl;
@@ -398,7 +402,7 @@ void menuEmpleado () {
                 if (ArchivoEmpleado.bajaEmpleado(id)) {
                     cout << "Empleado dado de baja correctamente." << endl;
                 } else {
-                    cout << "No se encontro el empleado o ya está dado de baja." << endl;
+                    cout << "No se encontro el empleado o ya esta dado de baja." << endl;
                 }
                 system("pause");
                 break;
@@ -409,7 +413,7 @@ void menuEmpleado () {
                 if (ArchivoEmpleado.modificarEmpleado(id)) {
                     cout << "Empleado modificado correctamente." << endl;
                 } else {
-                    cout << "No se encontro el empleado o está dado de baja." << endl;
+                    cout << "No se encontro el empleado o esta dado de baja." << endl;
                 }
                 system("pause");
                 break;
@@ -459,7 +463,7 @@ while (true) {
                 if (ArchivoVehiculo.bajaVehiculo(patente)) {
                     cout << "Vehiculo dado de baja correctamente." << endl;
                 } else {
-                    cout << "No se encontro el vehiculo o ya está dado de baja." << endl;
+                    cout << "No se encontro el vehiculo o ya esta dado de baja." << endl;
                 }
                 system("pause");
                 break;
@@ -469,7 +473,7 @@ while (true) {
     cin >> patente;
     int pos = ArchivoVehiculo.BuscarVehiculo(patente);
     if (pos == -1) {
-        cout << "No se encontro el vehiculo o está dado de baja." << endl;
+        cout << "No se encontro el vehiculo o esta dado de baja." << endl;
     } else {
         Vehiculo v = ArchivoVehiculo.LeerRegistro(pos);
         v.mostrarVehiculo();

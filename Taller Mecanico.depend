@@ -265,7 +265,7 @@
 	<iomanip>
 	"Informes.h"
 
-1750201870 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\archivocliente.cpp
+1750216440 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\archivocliente.cpp
 	<iostream>
 	<cstring>
 	"ArchivoCliente.h"
@@ -279,7 +279,7 @@
 
 1750201870 c:\users\bauti\onedrive\escritorio\org.proyectoprog2\persona.h
 
-1750201870 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\archivoreparacion.cpp
+1750216440 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\archivoreparacion.cpp
 	<iostream>
 	<cstring>
 	"ArchivoReparacion.h"
@@ -293,12 +293,12 @@
 
 1750201870 c:\users\bauti\onedrive\escritorio\org.proyectoprog2\fecha.h
 
-1750201870 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\cliente.cpp
+1750216440 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\cliente.cpp
 	<iostream>
 	<cstring>
 	"Cliente.h"
 
-1750202000 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\empleado.cpp
+1750216440 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\empleado.cpp
 	<iostream>
 	"Empleado.h"
 	"ArchivoEmpleado.h"
@@ -313,7 +313,7 @@
 	<cstdio>
 	<cstring>
 
-1750201870 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\factura.cpp
+1750216440 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\factura.cpp
 	<iostream>
 	<cstring>
 	<cstdio>
@@ -322,11 +322,11 @@
 1750201870 c:\users\bauti\onedrive\escritorio\org.proyectoprog2\factura.h
 	"Fecha.h"
 
-1750201870 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\fecha.cpp
+1750216440 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\fecha.cpp
 	"Fecha.h"
 	<iostream>
 
-1750206844 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\informes.cpp
+1750216440 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\informes.cpp
 	<iostream>
 	<cstring>
 	<cstdio>
@@ -339,7 +339,7 @@
 	"Factura.h"
 	<cstdio>
 
-1750205986 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\main.cpp
+1750217652 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\main.cpp
 	<iostream>
 	<cstdlib>
 	"Cliente.h"
@@ -356,7 +356,7 @@
 	<iostream>
 	"Persona.h"
 
-1750201870 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\reparacion.cpp
+1750216440 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\reparacion.cpp
 	<iostream>
 	<cstring>
 	"Reparacion.h"
@@ -379,4 +379,11 @@
 	<cstring>
 	"Vehiculo.h"
 	"ArchivoVehiculo.h"
+
+1750166987 source:c:\users\bauti\onedrive\escritorio\org.proyectoprog2\archivoempleado.cpp
+	<iostream>
+	"Empleado.h"
+	"ArchivoEmpleado.h"
+	"Persona.h"
+	<cstring>
 

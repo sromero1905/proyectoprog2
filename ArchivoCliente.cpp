@@ -186,7 +186,7 @@ Cliente ArchivoCliente::BuscarClientePorID(int id) {
 
     if (archivo == nullptr) {
         cout << "Error: No se pudo abrir el archivo." << endl;
-        return cliente; // Retorna cliente vacío (ID = 0)
+        return cliente; // Retorna cliente vacio (ID = 0)
     }
 
     while (fread(&cliente, TamRegistro, 1, archivo) == 1) {
@@ -197,7 +197,7 @@ Cliente ArchivoCliente::BuscarClientePorID(int id) {
     }
 
     fclose(archivo);
-    // Si no se encontró, retornar cliente vacío
+    // Si no se encontro, retornar cliente vacio
     Cliente clienteVacio;
     return clienteVacio;
 }

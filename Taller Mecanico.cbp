@@ -34,6 +34,7 @@
 		</Compiler>
 		<Unit filename="ArchivoCliente.cpp" />
 		<Unit filename="ArchivoCliente.h" />
+		<Unit filename="ArchivoEmpleado.cpp" />
 		<Unit filename="ArchivoEmpleado.h" />
 		<Unit filename="ArchivoPersona.h" />
 		<Unit filename="ArchivoReparacion.cpp" />

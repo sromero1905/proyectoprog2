@@ -27,9 +27,9 @@ Factura::Factura(int nFact, int nRep, int imp, Fecha fecha, const char* pat, int
 
 void Factura::generarFactura() {
     cout << "=== GENERAR NUEVA FACTURA ===" << endl;
-    cout << "Ingrese número de factura: ";
+    cout << "Ingrese numero de factura: ";
     cin >> NFactura;
-    cout << "Ingrese número de reparación: ";
+    cout << "Ingrese numero de reparacion: ";
     cin >> NReparacion;
     cout << "Ingrese importe: ";
     cin >> Importe;
@@ -56,7 +56,7 @@ void Factura::mostrarFactura() {
     FILE* archivo = fopen("facturas.dat", "rb");
     if (archivo == NULL) {
         cout << "ERROR: No se puede abrir el archivo de facturas!" << endl;
-        cout << "Puede que no existan facturas guardadas aún." << endl;
+        cout << "Puede que no existan facturas guardadas aun." << endl;
         return;
     }
 

@@ -263,7 +263,7 @@ void Informes::mostrarMenuInformes() {
         cout << "1. Recaudacion Mensual" << endl;
         cout << "2. Recaudacion Anual" << endl;
         cout << "3. Recaudacion por Cliente" << endl;
-        cout << "4. Reparaciones por Vehículo" << endl;
+        cout << "4. Reparaciones por Vehiculo" << endl;
         cout << "5. Reparaciones por Empleado" << endl;
         cout << "6. Vehiculo Mas Reparado" << endl;
         cout << "0. Volver" << endl;

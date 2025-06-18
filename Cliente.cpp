@@ -44,7 +44,7 @@ void Cliente::cargarCliente() {
     do {
         cin >> TipoCliente;
         if (TipoCliente < 1 || TipoCliente > 2) {
-            cout << "Tipo inválido. Ingrese 1 para Particular o 2 para Empresa: ";
+            cout << "Tipo invalido. Ingrese 1 para Particular o 2 para Empresa: ";
         }
     } while (TipoCliente < 1 || TipoCliente > 2);
 
@@ -81,7 +81,7 @@ void Cliente::actualizarCliente() {
     cout << "3. Actualizar direccion" << endl;
     cout << "4. Actualizar CUIT" << endl;
     cout << "5. Cambiar tipo de cliente" << endl;
-    cout << "Seleccione una opción: ";
+    cout << "Seleccione una opcion: ";
     cin >> opcion;
 
     switch (opcion) {
@@ -110,12 +110,12 @@ void Cliente::actualizarCliente() {
             do {
                 cin >> TipoCliente;
                 if (TipoCliente < 1 || TipoCliente > 2) {
-                    cout << "Tipo inválido. Ingrese 1 o 2: ";
+                    cout << "Tipo invalido. Ingrese 1 o 2: ";
                 }
             } while (TipoCliente < 1 || TipoCliente > 2);
             break;
         default:
-            cout << "Opción inválida." << endl;
+            cout << "Opcion invalida." << endl;
             return;
     }
 
